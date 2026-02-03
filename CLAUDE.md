@@ -140,7 +140,7 @@ Wait before retrying. Built-in limits:
 Article fetching requires Playwright. The user needs to run:
 ```bash
 pip install playwright
-playwright install chromium
+python -m playwright install chromium
 ```
 
 ---
