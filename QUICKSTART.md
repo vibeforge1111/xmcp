@@ -10,12 +10,6 @@ pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp
 playwright install chromium
 ```
 
-Optional MCP client installer:
-
-```bash
-npx github:vibeforge1111/vibeship-spawner-skills install --mcp
-```
-
 ## 2. Get Twitter API Keys
 
 1. Go to [developer.twitter.com](https://developer.twitter.com)

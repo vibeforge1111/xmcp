@@ -24,12 +24,6 @@ pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp
 playwright install chromium
 ```
 
-Optional MCP client installer:
-
-```bash
-npx github:vibeforge1111/vibeship-spawner-skills install --mcp
-```
-
 ### 2. Get API Keys
 
 Get your credentials from [developer.twitter.com](https://developer.twitter.com):
@@ -381,11 +375,6 @@ PORT=8080 x-twitter-mcp-http  # Custom port
 ### From GitHub (recommended)
 ```bash
 pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
-```
-
-### Via MCP installer
-```bash
-npx github:vibeforge1111/vibeship-spawner-skills install --mcp
 ```
 
 ### From PyPI (when published)
