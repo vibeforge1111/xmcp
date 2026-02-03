@@ -21,17 +21,30 @@ The most comprehensive MCP server for X/Twitter with **permission-based access c
 
 ```bash
 pip install "xmcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
-playwright install chromium
+python -m playwright install chromium
 ```
 
 Note: The package name is `xmcp` and the server command is `xmcp-server`.
 
-### 2. Get API Keys
+### 2. Get API Keys (Required)
 
+XMCP requires X/Twitter API credentials to run.
 Get your credentials from [developer.twitter.com](https://developer.twitter.com):
 - API Key & Secret
 - Access Token & Secret
 - Bearer Token
+
+You can store them in a local `.env` file:
+
+```bash
+# Windows (PowerShell)
+copy .env.example .env
+
+# macOS/Linux
+cp .env.example .env
+```
+
+Do not commit `.env`. It is ignored by default.
 
 ### 3. Configure
 
@@ -214,7 +227,7 @@ WebFetch("https://x.com/...")  # Returns empty content
 
 ```bash
 pip install playwright
-playwright install chromium
+python -m playwright install chromium
 ```
 
 ---
@@ -229,6 +242,8 @@ playwright install chromium
 | `X_MCP_GROUPS` | Groups for custom profile | `research` |
 | `X_MCP_DISABLED_TOOLS` | Tools to disable | none |
 | `X_MCP_ENABLED_TOOLS` | Tools to force-enable | none |
+
+Credentials are read locally and only used to authenticate requests to X/Twitter.
 
 ### Examples
 
@@ -391,7 +406,7 @@ pip install xmcp[articles]
 git clone https://github.com/vibeforge1111/xmcp.git
 cd xmcp
 pip install -e .[articles]
-playwright install chromium
+python -m playwright install chromium
 ```
 
 ---

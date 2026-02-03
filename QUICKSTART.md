@@ -7,12 +7,12 @@ Get up and running in 5 minutes.
 ```bash
 # With article support (recommended)
 pip install "xmcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
-playwright install chromium
+python -m playwright install chromium
 ```
 
 Note: The package name is `xmcp` and the server command is `xmcp-server`.
 
-## 2. Get Twitter API Keys
+## 2. Get Twitter API Keys (Required)
 
 1. Go to [developer.twitter.com](https://developer.twitter.com)
 2. Create a project and app
@@ -22,6 +22,19 @@ Note: The package name is `xmcp` and the server command is `xmcp-server`.
    - Access Token
    - Access Token Secret
    - Bearer Token
+
+XMCP will not work without valid API credentials.
+Copy the example environment file and fill it in:
+
+```bash
+# Windows (PowerShell)
+copy .env.example .env
+
+# macOS/Linux
+cp .env.example .env
+```
+
+Do not commit `.env`. It is ignored by default.
 
 ## 3. Configure Claude
 
@@ -87,7 +100,7 @@ Restart Claude Code, then:
 
 **"Tool not enabled"**: Change to a higher-access profile
 
-**"Playwright not installed"**: Run `pip install playwright && playwright install chromium`
+**"Playwright not installed"**: Run `pip install playwright && python -m playwright install chromium`
 
 **"Rate limit exceeded"**: Wait and try again
 

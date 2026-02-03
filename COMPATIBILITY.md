@@ -454,6 +454,8 @@ TWITTER_BEARER_TOKEN=your_bearer
 X_MCP_PROFILE=researcher
 ```
 
+Tip: start from `.env.example` and never commit your `.env` file.
+
 ---
 
 ## Agent Rules Files
@@ -516,7 +518,7 @@ Check your `X_MCP_PROFILE`. Default is `researcher` (read-only).
 For article fetching:
 ```bash
 pip install playwright
-playwright install chromium
+python -m playwright install chromium
 ```
 
 ### "Rate limit exceeded"
