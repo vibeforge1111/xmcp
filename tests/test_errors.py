@@ -1,4 +1,4 @@
-from x_twitter_mcp.errors import RateLimitError, error_response, handle_exception
+from xmcp.errors import RateLimitError, error_response, handle_exception
 
 
 def test_error_response_shape():

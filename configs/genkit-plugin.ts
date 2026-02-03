@@ -15,7 +15,7 @@ const ai = genkit({
     mcpClient({
       name: 'xmcp',
       serverProcess: {
-        command: 'x-twitter-mcp-server',
+        command: 'xmcp-server',
         env: {
           TWITTER_API_KEY: process.env.TWITTER_API_KEY!,
           TWITTER_API_SECRET: process.env.TWITTER_API_SECRET!,

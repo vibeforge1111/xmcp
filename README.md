@@ -20,11 +20,11 @@ The most comprehensive MCP server for X/Twitter with **permission-based access c
 ### 1. Install
 
 ```bash
-pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
+pip install "xmcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
 playwright install chromium
 ```
 
-Note: The package name is `x-twitter-mcp` and the server command is `x-twitter-mcp-server`.
+Note: The package name is `xmcp` and the server command is `xmcp-server`.
 
 ### 2. Get API Keys
 
@@ -42,7 +42,7 @@ Add to your Claude settings (`~/.claude.json`):
   "mcpServers": {
     "xmcp": {
       "type": "stdio",
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "your_key",
         "TWITTER_API_SECRET": "your_secret",
@@ -368,8 +368,8 @@ This package includes rules files for AI code editors:
 For cloud deployments:
 
 ```bash
-x-twitter-mcp-http  # Runs on port 8081
-PORT=8080 x-twitter-mcp-http  # Custom port
+xmcp-http  # Runs on port 8081
+PORT=8080 xmcp-http  # Custom port
 ```
 
 ---
@@ -378,12 +378,12 @@ PORT=8080 x-twitter-mcp-http  # Custom port
 
 ### From GitHub (recommended)
 ```bash
-pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
+pip install "xmcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
 ```
 
 ### From PyPI (when published)
 ```bash
-pip install x-twitter-mcp[articles]
+pip install xmcp[articles]
 ```
 
 ### From Source
@@ -410,7 +410,8 @@ playwright install chromium
 
 ## Credits
 
-Built on [x-twitter-mcp-server](https://github.com/rafaljanicki/x-twitter-mcp-server) by Rafal Janicki.
+Built on the upstream project by Rafal Janicki:
+`https://github.com/rafaljanicki/x-twitter-mcp-server`
 
 Enhanced by [VibeShip](https://github.com/vibeforge1111) with:
 - Permission-based access control (5 profiles, 8 groups)

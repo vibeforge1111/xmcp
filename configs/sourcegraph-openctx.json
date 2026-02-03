@@ -5,7 +5,7 @@
       "type": "mcp",
       "name": "XMCP",
       "description": "X/Twitter integration with 70+ tools",
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",
         "TWITTER_API_SECRET": "${env:TWITTER_API_SECRET}",

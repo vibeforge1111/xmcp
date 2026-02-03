@@ -33,7 +33,7 @@ This MCP server is compatible with **all major MCP clients**. This guide shows h
   "mcpServers": {
     "xmcp": {
       "type": "stdio",
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "your_key",
         "TWITTER_API_SECRET": "your_secret",
@@ -61,7 +61,7 @@ Continue supports MCP natively. Create a config file in `.continue/mcpServers/`.
 
 ```yaml
 name: XMCP
-command: x-twitter-mcp-server
+command: xmcp-server
 env:
   TWITTER_API_KEY: ${TWITTER_API_KEY}
   TWITTER_API_SECRET: ${TWITTER_API_SECRET}
@@ -76,7 +76,7 @@ env:
 ```json
 {
   "xmcp": {
-    "command": "x-twitter-mcp-server",
+    "command": "xmcp-server",
     "env": {
       "TWITTER_API_KEY": "${TWITTER_API_KEY}",
       "TWITTER_API_SECRET": "${TWITTER_API_SECRET}",
@@ -112,7 +112,7 @@ version: 1.0.0
 author: vibeforge1111
 
 mcp:
-  server: x-twitter-mcp-server
+  server: xmcp-server
   transport: stdio
   env:
     TWITTER_API_KEY: ${TWITTER_API_KEY}
@@ -151,7 +151,7 @@ If using MCPorter skill directly:
 # In your agent config
 skills:
   - mcporter:
-      server: x-twitter-mcp-server
+      server: xmcp-server
       tools: [search_twitter, get_article, get_user_profile]
 ```
 
@@ -168,7 +168,7 @@ Zed has built-in MCP support via settings.
   "mcp": {
     "servers": {
       "xmcp": {
-        "command": "x-twitter-mcp-server",
+        "command": "xmcp-server",
         "env": {
           "TWITTER_API_KEY": "your_key",
           "TWITTER_API_SECRET": "your_secret",
@@ -199,7 +199,7 @@ OpenAI adopted MCP in March 2025. Configuration is similar to Claude Desktop.
 {
   "servers": {
     "xmcp": {
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "your_key",
         "TWITTER_API_SECRET": "your_secret",
@@ -226,7 +226,7 @@ Cody uses OpenCTX for MCP integration.
   "providers": {
     "mcp-xmcp": {
       "type": "mcp",
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",
         "TWITTER_API_SECRET": "${env:TWITTER_API_SECRET}",
@@ -262,7 +262,7 @@ const ai = genkit({
   plugins: [
     mcpClient({
       name: 'xmcp',
-      command: 'x-twitter-mcp-server',
+      command: 'xmcp-server',
       env: {
         TWITTER_API_KEY: process.env.TWITTER_API_KEY,
         TWITTER_API_SECRET: process.env.TWITTER_API_SECRET,
@@ -288,7 +288,7 @@ Taal synchronizes MCP configs across multiple AI assistants.
 version: 1
 servers:
   xmcp:
-    command: x-twitter-mcp-server
+    command: xmcp-server
     env:
       TWITTER_API_KEY: ${TWITTER_API_KEY}
       TWITTER_API_SECRET: ${TWITTER_API_SECRET}
@@ -326,7 +326,7 @@ taal sync
 {
   "openmcp.servers": {
     "xmcp": {
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",
         "TWITTER_API_SECRET": "${env:TWITTER_API_SECRET}",
@@ -350,10 +350,10 @@ For clients that support HTTP-based MCP or cloud deployments:
 
 ```bash
 # Default port 8081
-x-twitter-mcp-http
+xmcp-http
 
 # Custom port
-PORT=8080 x-twitter-mcp-http
+PORT=8080 xmcp-http
 ```
 
 ### Connect via HTTP
@@ -407,7 +407,7 @@ For local LLMs via Ollama with MCP:
 
    mcpServers:
      - name: XMCP
-       command: x-twitter-mcp-server
+       command: xmcp-server
        env:
          TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN}
          X_MCP_PROFILE: researcher
@@ -480,10 +480,10 @@ Pre-configured rules for AI assistants:
 
 ```bash
 # Check if server starts
-x-twitter-mcp-server --help
+xmcp-server --help
 
 # Test with a simple query (if installed globally)
-echo '{"jsonrpc":"2.0","method":"tools/list","id":1}' | x-twitter-mcp-server
+echo '{"jsonrpc":"2.0","method":"tools/list","id":1}' | xmcp-server
 ```
 
 ### From Any MCP Client
@@ -501,10 +501,10 @@ Once configured, test with:
 
 ```bash
 # Install globally
-pip install x-twitter-mcp
+pip install xmcp
 
 # Or use full path
-command: python -m x_twitter_mcp.server
+command: python -m xmcp.server
 ```
 
 ### "Tool not enabled"

@@ -9,7 +9,7 @@ version: 1
 # MCP Servers to sync
 servers:
   xmcp:
-    command: x-twitter-mcp-server
+    command: xmcp-server
     description: X/Twitter integration with 70+ tools, permission profiles, Playwright articles
 
     env:

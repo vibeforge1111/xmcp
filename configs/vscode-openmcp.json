@@ -2,7 +2,7 @@
   "$schema": "https://openmcp.dev/schema/settings.json",
   "openmcp.servers": {
     "xmcp": {
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "description": "XMCP with 70+ tools",
       "env": {
         "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",

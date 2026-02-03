@@ -1,4 +1,4 @@
-from x_twitter_mcp.config import is_tool_enabled
+from xmcp.config import is_tool_enabled
 
 
 def test_permission_refresh(monkeypatch):

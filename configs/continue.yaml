@@ -6,7 +6,7 @@ description: |
   X/Twitter integration with 70+ tools, permission profiles, and Playwright article fetching.
   Use get_article for X URLs - WebFetch will fail.
 
-command: x-twitter-mcp-server
+command: xmcp-server
 
 # Environment variables (uses ${VAR} templating)
 env:

@@ -2,7 +2,7 @@
   "$schema": "https://openai.com/schema/mcp-config.json",
   "servers": {
     "xmcp": {
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "description": "X/Twitter integration with 70+ tools",
       "env": {
         "TWITTER_API_KEY": "your_api_key",

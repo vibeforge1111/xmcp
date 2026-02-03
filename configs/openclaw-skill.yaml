@@ -14,7 +14,7 @@ repository: https://github.com/vibeforge1111/xmcp
 
 # MCP Server Configuration
 mcp:
-  server: x-twitter-mcp-server
+  server: xmcp-server
   transport: stdio
   env:
     TWITTER_API_KEY: ${TWITTER_API_KEY}

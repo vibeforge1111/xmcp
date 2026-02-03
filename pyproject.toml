@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "x-twitter-mcp"
+name = "xmcp"
 version = "0.2.1"
 description = "XMCP: comprehensive MCP for X/Twitter with permission profiles, 70+ tools, Playwright article fetching"
 readme = "README.md"
@@ -56,8 +56,8 @@ all = [
 ]
 
 [project.scripts]
-x-twitter-mcp-server = "x_twitter_mcp:main"
-x-twitter-mcp-http = "x_twitter_mcp.http_server:main"
+xmcp-server = "xmcp:main"
+xmcp-http = "xmcp.http_server:main"
 
 [project.urls]
 Homepage = "https://github.com/vibeforge1111/xmcp"
@@ -66,7 +66,7 @@ Documentation = "https://github.com/vibeforge1111/xmcp"
 Issues = "https://github.com/vibeforge1111/xmcp/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/x_twitter_mcp"]
+packages = ["src/xmcp"]
 
 [tool.hatch.build.targets.sdist]
 include = [

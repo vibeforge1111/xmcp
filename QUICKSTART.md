@@ -6,11 +6,11 @@ Get up and running in 5 minutes.
 
 ```bash
 # With article support (recommended)
-pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
+pip install "xmcp[articles] @ git+https://github.com/vibeforge1111/xmcp.git"
 playwright install chromium
 ```
 
-Note: The package name is `x-twitter-mcp` and the server command is `x-twitter-mcp-server`.
+Note: The package name is `xmcp` and the server command is `xmcp-server`.
 
 ## 2. Get Twitter API Keys
 
@@ -32,7 +32,7 @@ Add to `~/.claude.json`:
   "mcpServers": {
     "xmcp": {
       "type": "stdio",
-      "command": "x-twitter-mcp-server",
+      "command": "xmcp-server",
       "env": {
         "TWITTER_API_KEY": "your_key",
         "TWITTER_API_SECRET": "your_secret",
