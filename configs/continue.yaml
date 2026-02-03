@@ -1,0 +1,22 @@
+# Continue.dev MCP Configuration
+# Copy to: .continue/mcpServers/x-twitter.yaml
+
+name: X-Twitter MCP
+description: |
+  X/Twitter integration with 70+ tools, permission profiles, and Playwright article fetching.
+  Use get_article for X URLs - WebFetch will fail.
+
+command: x-twitter-mcp-server
+
+# Environment variables (uses ${VAR} templating)
+env:
+  TWITTER_API_KEY: ${TWITTER_API_KEY}
+  TWITTER_API_SECRET: ${TWITTER_API_SECRET}
+  TWITTER_ACCESS_TOKEN: ${TWITTER_ACCESS_TOKEN}
+  TWITTER_ACCESS_TOKEN_SECRET: ${TWITTER_ACCESS_TOKEN_SECRET}
+  TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN}
+  X_MCP_PROFILE: researcher  # Options: researcher, creator, manager, automation, custom
+
+# Alternative: HTTP transport for remote server
+# type: streamable-http
+# url: http://your-server:8081/mcp

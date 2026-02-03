@@ -1,0 +1,27 @@
+# Cline Rules for X-Twitter MCP
+
+## IMPORTANT: X/Twitter Articles Need Playwright
+
+When fetching X/Twitter articles, use the `get_article` MCP tool.
+DO NOT use WebFetch or HTTP requests - they will fail because X articles require JavaScript.
+
+Pattern: Any URL like `x.com/*/status/*` or `twitter.com/*/status/*` needs `get_article`.
+
+## Tool Quick Reference
+
+| Task | MCP Tool |
+|------|----------|
+| Search tweets | `mcp__x-twitter__search_twitter` |
+| Read article | `mcp__x-twitter__get_article` (PLAYWRIGHT) |
+| Get user | `mcp__x-twitter__get_user_by_screen_name` |
+| Get thread | `mcp__x-twitter__get_conversation` |
+| Post tweet | `mcp__x-twitter__post_tweet` |
+| Like tweet | `mcp__x-twitter__favorite_tweet` |
+| Retweet | `mcp__x-twitter__retweet` |
+
+## Profile Permissions
+
+- `researcher`: Read-only (search, get tweets, articles)
+- `creator`: + Post, engage
+- `manager`: + Follow, block, lists
+- `automation`: Full access

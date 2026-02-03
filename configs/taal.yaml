@@ -1,0 +1,57 @@
+# Taal - Cross-Client MCP Configuration Sync
+# https://github.com/taal-dev/taal
+#
+# Taal synchronizes MCP server configs across multiple AI assistants.
+# Run `taal sync` to push this config to all configured clients.
+
+version: 1
+
+# MCP Servers to sync
+servers:
+  x-twitter:
+    command: x-twitter-mcp-server
+    description: X/Twitter integration with 70+ tools, permission profiles, Playwright articles
+
+    env:
+      TWITTER_API_KEY: ${TWITTER_API_KEY}
+      TWITTER_API_SECRET: ${TWITTER_API_SECRET}
+      TWITTER_ACCESS_TOKEN: ${TWITTER_ACCESS_TOKEN}
+      TWITTER_ACCESS_TOKEN_SECRET: ${TWITTER_ACCESS_TOKEN_SECRET}
+      TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN}
+      X_MCP_PROFILE: researcher
+
+    # Clients to sync this server to
+    sync:
+      - claude       # ~/.claude.json
+      - cursor       # .cursor/mcp.json
+      - continue     # .continue/mcpServers/
+      - zed          # ~/.config/zed/settings.json
+      - chatgpt      # ~/.chatgpt/mcp.json
+      - cline        # .cline/mcp.json
+
+# Global settings
+settings:
+  # Use environment variable templating
+  env_templating: true
+
+  # Create backup before sync
+  backup: true
+
+  # Dry run by default (set to false to actually sync)
+  dry_run: true
+
+# Client-specific overrides
+clients:
+  claude:
+    # Claude Desktop uses type: stdio
+    extra:
+      type: stdio
+
+  cursor:
+    # Cursor needs the server in a specific location
+    config_path: .cursor/mcp.json
+
+  continue:
+    # Continue uses YAML format by default
+    format: yaml
+    config_path: .continue/mcpServers/x-twitter.yaml

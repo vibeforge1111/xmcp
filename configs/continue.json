@@ -1,0 +1,13 @@
+{
+  "x-twitter": {
+    "command": "x-twitter-mcp-server",
+    "env": {
+      "TWITTER_API_KEY": "${TWITTER_API_KEY}",
+      "TWITTER_API_SECRET": "${TWITTER_API_SECRET}",
+      "TWITTER_ACCESS_TOKEN": "${TWITTER_ACCESS_TOKEN}",
+      "TWITTER_ACCESS_TOKEN_SECRET": "${TWITTER_ACCESS_TOKEN_SECRET}",
+      "TWITTER_BEARER_TOKEN": "${TWITTER_BEARER_TOKEN}",
+      "X_MCP_PROFILE": "researcher"
+    }
+  }
+}

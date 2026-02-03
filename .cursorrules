@@ -1,0 +1,72 @@
+# Cursor Rules for X-Twitter MCP
+
+## CRITICAL: X/Twitter Article Fetching
+
+When the user asks you to read, fetch, or analyze an X/Twitter article:
+
+1. **ALWAYS use the `get_article` MCP tool** - it uses Playwright to render JavaScript
+2. **NEVER use WebFetch, curl, or requests** - they will return empty/broken content
+3. **X articles require JavaScript rendering** - only Playwright works
+
+### Correct Pattern
+```
+User: "Read this X article: https://x.com/user/status/123"
+You: Use mcp__x-twitter__get_article with the URL
+```
+
+### Wrong Pattern (DO NOT DO THIS)
+```
+User: "Read this X article"
+You: WebFetch("https://x.com/...")  # WRONG - will fail
+You: requests.get("https://x.com/...")  # WRONG - will fail
+```
+
+## Article URLs That Need Playwright
+
+Any URL matching these patterns requires `get_article`:
+- `https://x.com/*/status/*`
+- `https://twitter.com/*/status/*`
+- `https://x.com/i/article/*`
+- `https://twitter.com/i/article/*`
+
+## Available MCP Tools
+
+The x-twitter MCP provides these tool categories:
+
+### Research (Read-Only)
+- `search_twitter` - Search with engagement metrics
+- `search_articles` - Find tweets with articles
+- `get_article` - **Fetch article content (USES PLAYWRIGHT)**
+- `get_user_profile`, `get_user_by_screen_name` - User info
+- `get_tweet_details` - Tweet info
+- `get_trends` - Trending topics
+
+### Engagement
+- `favorite_tweet` / `unfavorite_tweet` - Like/unlike
+- `retweet` / `unretweet` - Retweet
+- `bookmark_tweet` - Save tweets
+
+### Publishing
+- `post_tweet` - Post a tweet
+- `create_thread` - Post a thread
+- `quote_tweet` - Quote tweet
+- `create_poll_tweet` - Create poll
+
+### Conversations
+- `get_conversation` - Get full thread
+- `get_replies` - Get replies to a tweet
+
+## Permissions
+
+Tools are permission-gated by profile. If a tool fails with "not enabled":
+- Default profile is `researcher` (read-only)
+- Publishing requires `creator` profile
+- Social actions require `manager` profile
+
+## When User Mentions Twitter/X
+
+1. If they want to **search**: Use `search_twitter`
+2. If they want to **read an article**: Use `get_article` (PLAYWRIGHT)
+3. If they want to **see a thread**: Use `get_conversation`
+4. If they want to **post**: Use `post_tweet` or `create_thread`
+5. If they want **user info**: Use `get_user_by_screen_name`

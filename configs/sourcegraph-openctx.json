@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openctx.org/schema/config.json",
+  "providers": {
+    "mcp-x-twitter": {
+      "type": "mcp",
+      "name": "X-Twitter MCP",
+      "description": "X/Twitter integration with 70+ tools",
+      "command": "x-twitter-mcp-server",
+      "env": {
+        "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",
+        "TWITTER_API_SECRET": "${env:TWITTER_API_SECRET}",
+        "TWITTER_ACCESS_TOKEN": "${env:TWITTER_ACCESS_TOKEN}",
+        "TWITTER_ACCESS_TOKEN_SECRET": "${env:TWITTER_ACCESS_TOKEN_SECRET}",
+        "TWITTER_BEARER_TOKEN": "${env:TWITTER_BEARER_TOKEN}",
+        "X_MCP_PROFILE": "researcher"
+      },
+      "capabilities": {
+        "tools": true,
+        "resources": false,
+        "prompts": true
+      }
+    }
+  }
+}

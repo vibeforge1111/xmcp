@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "x-twitter-mcp"
+version = "0.2.1"
+description = "Comprehensive X/Twitter MCP with permission-based profiles, 60+ tools, Playwright article fetching"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "VibeShip", email = "cem@seedify.fund" }
+]
+keywords = [
+    "mcp", "twitter", "x", "claude", "ai", "playwright", "articles",
+    "social-media", "api", "automation", "research"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "fastmcp>=0.1.0",
+    "tweepy>=4.14.0",
+    "python-dotenv>=1.0.0",
+    "starlette>=0.27.0",
+    "uvicorn>=0.23.0",
+]
+
+[project.optional-dependencies]
+articles = [
+    "playwright>=1.40.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+all = [
+    "playwright>=1.40.0",
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+x-twitter-mcp-server = "x_twitter_mcp:main"
+x-twitter-mcp-http = "x_twitter_mcp.http_server:main"
+
+[project.urls]
+Homepage = "https://github.com/vibeforge1111/vibeship-spark-intelligence"
+Repository = "https://github.com/vibeforge1111/vibeship-spark-intelligence"
+Documentation = "https://github.com/vibeforge1111/vibeship-spark-intelligence/tree/main/mcp-servers/x-twitter-mcp"
+Issues = "https://github.com/vibeforge1111/vibeship-spark-intelligence/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/x_twitter_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/pyproject.toml",
+    "/LICENSE",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]  # Line too long - handled by black

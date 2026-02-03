@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openmcp.dev/schema/settings.json",
+  "openmcp.servers": {
+    "x-twitter": {
+      "command": "x-twitter-mcp-server",
+      "description": "X/Twitter MCP with 70+ tools",
+      "env": {
+        "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",
+        "TWITTER_API_SECRET": "${env:TWITTER_API_SECRET}",
+        "TWITTER_ACCESS_TOKEN": "${env:TWITTER_ACCESS_TOKEN}",
+        "TWITTER_ACCESS_TOKEN_SECRET": "${env:TWITTER_ACCESS_TOKEN_SECRET}",
+        "TWITTER_BEARER_TOKEN": "${env:TWITTER_BEARER_TOKEN}",
+        "X_MCP_PROFILE": "researcher"
+      }
+    }
+  },
+  "openmcp.defaultServer": "x-twitter",
+  "openmcp.autoConnect": true,
+  "openmcp.showToolOutput": true
+}

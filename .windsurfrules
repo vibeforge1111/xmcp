@@ -1,0 +1,22 @@
+# Windsurf Rules for X-Twitter MCP
+
+## X/Twitter Article Fetching
+
+CRITICAL: Use `get_article` MCP tool for X/Twitter articles.
+WebFetch and HTTP requests fail because articles need JavaScript rendering.
+
+The `get_article` tool uses Playwright internally to properly render the content.
+
+## When to Use get_article
+
+Any URL matching:
+- x.com/*/status/*
+- twitter.com/*/status/*
+- x.com/i/article/*
+
+## Available Tools
+
+Research: search_twitter, get_article, get_user_profile, get_tweet_details
+Engage: favorite_tweet, retweet, bookmark_tweet
+Publish: post_tweet, create_thread, quote_tweet
+Social: follow_user, block_user, mute_user

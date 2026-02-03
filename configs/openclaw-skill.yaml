@@ -1,0 +1,117 @@
+# OpenClaw Skill Configuration
+# Copy to: ~/.openclaw/skills/x-twitter-mcp.yaml
+
+name: x-twitter-mcp
+description: |
+  X/Twitter integration via MCP with 70+ tools.
+  Search, post, engage, read articles, manage lists, and more.
+  Uses Playwright for article fetching - WebFetch will fail on X URLs.
+
+version: 1.0.0
+author: vibeforge1111
+license: MIT
+repository: https://github.com/vibeforge1111/vibeship-spark-intelligence
+
+# MCP Server Configuration
+mcp:
+  server: x-twitter-mcp-server
+  transport: stdio
+  env:
+    TWITTER_API_KEY: ${TWITTER_API_KEY}
+    TWITTER_API_SECRET: ${TWITTER_API_SECRET}
+    TWITTER_ACCESS_TOKEN: ${TWITTER_ACCESS_TOKEN}
+    TWITTER_ACCESS_TOKEN_SECRET: ${TWITTER_ACCESS_TOKEN_SECRET}
+    TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN}
+    X_MCP_PROFILE: researcher  # researcher, creator, manager, automation, custom
+
+# Tool groups exposed
+capabilities:
+  research:
+    - search_twitter
+    - search_articles
+    - get_article
+    - get_user_by_screen_name
+    - get_user_profile
+    - get_user_by_id
+    - get_tweet_details
+    - get_timeline
+    - get_latest_timeline
+    - get_trends
+    - get_user_followers
+    - get_user_following
+
+  engage:
+    - favorite_tweet
+    - unfavorite_tweet
+    - retweet
+    - unretweet
+    - bookmark_tweet
+    - delete_bookmark
+
+  publish:
+    - post_tweet
+    - delete_tweet
+    - quote_tweet
+    - create_thread
+    - create_poll_tweet
+
+  social:
+    - follow_user
+    - unfollow_user
+    - block_user
+    - unblock_user
+    - mute_user
+    - unmute_user
+
+# Triggers that activate this skill
+triggers:
+  - "search twitter"
+  - "search x"
+  - "post tweet"
+  - "tweet about"
+  - "read x article"
+  - "read twitter article"
+  - "twitter analytics"
+  - "x engagement"
+  - "trending on twitter"
+  - "trending on x"
+  - "follow on twitter"
+  - "twitter user"
+  - "@handle"
+
+# Instructions for the agent
+instructions: |
+  ## X-Twitter MCP Skill
+
+  ### Critical Rule
+  Use `get_article` for X/Twitter article URLs. WebFetch will fail because X articles require JavaScript rendering via Playwright.
+
+  ### Permission Profiles
+  The X_MCP_PROFILE controls available tools:
+  - researcher (default): Read-only - search, get users, get articles
+  - creator: Can post and engage
+  - manager: Full account control
+  - automation: Everything including DMs
+
+  ### Common Tasks
+  - Search: `search_twitter(query="AI agents")`
+  - Get user: `get_user_by_screen_name("elonmusk")`
+  - Read article: `get_article("https://x.com/user/status/123")`
+  - Post: `post_tweet("Hello world!")` (requires creator+)
+  - Like: `favorite_tweet("tweet_id")` (requires creator+)
+
+# Security
+security:
+  sandboxed: true
+  network_access: true
+  file_access: false
+
+# Tags for discovery
+tags:
+  - twitter
+  - x
+  - social-media
+  - mcp
+  - research
+  - analytics
+  - engagement
