@@ -58,6 +58,8 @@ all = [
 [project.scripts]
 xmcp-server = "xmcp:main"
 xmcp-http = "xmcp.http_server:main"
+x-twitter-mcp-server = "xmcp:main"
+x-twitter-mcp-http = "xmcp.http_server:main"
 
 [project.urls]
 Homepage = "https://github.com/vibeforge1111/xmcp"
