@@ -5,17 +5,13 @@ The most comprehensive MCP server for X/Twitter with **permission-based access c
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-## Why This MCP?
+## Highlights
 
-| Feature | This MCP | Others |
-|---------|----------|--------|
-| Tools | 70+ | ~20 |
-| Permission profiles | 5 profiles, 8 groups | None |
-| Article fetching | Playwright (works) | HTTP (fails) |
-| Engagement metrics | Full metrics | Basic |
-| Thread support | Create & read | Limited |
-| Lists, DMs, Social | Full support | Partial |
-| **Client compatibility** | **12+ clients** | Claude only |
+- 70+ tools across research, engagement, publishing, social, lists, DMs
+- Permission profiles with runtime enforcement
+- Playwright-powered article fetching for X articles
+- Full engagement metrics and thread support
+- Broad MCP client compatibility
 
 ---
 
