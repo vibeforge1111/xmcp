@@ -1,5 +1,5 @@
 """
-X-Twitter MCP Server
+XMCP Server
 
 A comprehensive, modular MCP server for X/Twitter with permission-based tool access.
 
@@ -55,7 +55,7 @@ warnings.filterwarnings("ignore", category=SyntaxWarning)
 load_dotenv()
 
 # Initialize FastMCP server
-server = FastMCP(name="X-Twitter-MCP")
+server = FastMCP(name="XMCP")
 
 # Twitter API client setup (lazy-loaded, credential-aware)
 TWITTER_ENV_VARS = [
@@ -1301,7 +1301,7 @@ async def get_me() -> Dict:
 def run():
     """Entry point for running the FastMCP server."""
     pm = get_permission_manager()
-    logger.info(f"Starting X-Twitter-MCP with profile: {pm.get_profile().value}")
+    logger.info(f"Starting XMCP with profile: {pm.get_profile().value}")
     logger.info(f"Enabled tools: {len(pm.get_enabled_tools())}")
     return server.run()
 

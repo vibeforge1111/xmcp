@@ -2,7 +2,7 @@
   "$schema": "https://zed.dev/schema/settings.json",
   "mcp": {
     "servers": {
-      "x-twitter": {
+      "xmcp": {
         "command": "x-twitter-mcp-server",
         "env": {
           "TWITTER_API_KEY": "your_api_key",
@@ -17,7 +17,7 @@
   },
   "assistant": {
     "context_providers": {
-      "x-twitter": {
+      "xmcp": {
         "enabled": true
       }
     }

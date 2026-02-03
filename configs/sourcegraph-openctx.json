@@ -1,9 +1,9 @@
 {
   "$schema": "https://openctx.org/schema/config.json",
   "providers": {
-    "mcp-x-twitter": {
+    "mcp-xmcp": {
       "type": "mcp",
-      "name": "X-Twitter MCP",
+      "name": "XMCP",
       "description": "X/Twitter integration with 70+ tools",
       "command": "x-twitter-mcp-server",
       "env": {

@@ -1,4 +1,4 @@
-# Agent Rules for X-Twitter MCP
+# Agent Rules for XMCP
 
 Copy the relevant section to your AI editor's rules file.
 
@@ -9,7 +9,7 @@ Copy the relevant section to your AI editor's rules file.
 Add this to your CLAUDE.md:
 
 ```markdown
-## X-Twitter MCP
+## XMCP
 
 When working with X/Twitter:
 
@@ -21,12 +21,12 @@ When working with X/Twitter:
 ### Available Tools
 | Task | Tool |
 |------|------|
-| Search | mcp__x-twitter__search_twitter |
-| Read article | mcp__x-twitter__get_article |
-| Get user | mcp__x-twitter__get_user_by_screen_name |
-| Get thread | mcp__x-twitter__get_conversation |
-| Post tweet | mcp__x-twitter__post_tweet |
-| Like | mcp__x-twitter__favorite_tweet |
+| Search | mcp__xmcp__search_twitter |
+| Read article | mcp__xmcp__get_article |
+| Get user | mcp__xmcp__get_user_by_screen_name |
+| Get thread | mcp__xmcp__get_conversation |
+| Post tweet | mcp__xmcp__post_tweet |
+| Like | mcp__xmcp__favorite_tweet |
 
 ### Permission Levels
 - researcher: read-only (default)
@@ -44,19 +44,19 @@ Guidance: Use AI for research and drafts, but keep human review for posts and re
 Add this to your `.cursorrules`:
 
 ```
-# X-Twitter MCP Rules
+# XMCP Rules
 
 When fetching X/Twitter articles:
-1. Use mcp__x-twitter__get_article - NOT WebFetch
+1. Use mcp__xmcp__get_article - NOT WebFetch
 2. X articles require JavaScript (Playwright)
 3. Pattern: x.com/*/status/* or twitter.com/*/status/*
 
 Quick reference:
-- Search: mcp__x-twitter__search_twitter
-- Article: mcp__x-twitter__get_article (PLAYWRIGHT!)
-- User: mcp__x-twitter__get_user_by_screen_name
-- Thread: mcp__x-twitter__get_conversation
-- Post: mcp__x-twitter__post_tweet
+- Search: mcp__xmcp__search_twitter
+- Article: mcp__xmcp__get_article (PLAYWRIGHT!)
+- User: mcp__xmcp__get_user_by_screen_name
+- Thread: mcp__xmcp__get_conversation
+- Post: mcp__xmcp__post_tweet
 ```
 
 ---
@@ -66,7 +66,7 @@ Quick reference:
 Add this to your `.clinerules`:
 
 ```
-# X-Twitter MCP
+# XMCP
 
 IMPORTANT: Use get_article MCP tool for X/Twitter articles (uses Playwright).
 WebFetch fails because X requires JavaScript.
@@ -82,7 +82,7 @@ Tools: search_twitter, get_article, get_user_by_screen_name,
 Add this to your `.windsurfrules`:
 
 ```
-# X-Twitter MCP
+# XMCP
 
 Use get_article for X articles (Playwright-based).
 Do not use WebFetch for x.com URLs.
@@ -95,9 +95,9 @@ Key tools: search_twitter, get_article, get_user_by_screen_name
 ## For Aider (.aider.conf.yml)
 
 ```yaml
-# X-Twitter MCP context
+# XMCP context
 extra-context: |
-  X-Twitter MCP available. For X articles, use get_article tool (Playwright).
+  XMCP available. For X articles, use get_article tool (Playwright).
   Do not use HTTP fetch for x.com URLs - they need JavaScript.
 ```
 
@@ -108,7 +108,7 @@ extra-context: |
 Add to your system prompt:
 
 ```
-You have access to X-Twitter MCP. Key rules:
+You have access to XMCP. Key rules:
 1. For X/Twitter articles (x.com/*/status/*), use get_article tool
 2. Do NOT use WebFetch for X URLs - they require JavaScript
 3. get_article uses Playwright internally to render properly

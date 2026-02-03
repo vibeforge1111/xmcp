@@ -1,5 +1,5 @@
 """
-X-Twitter MCP Configuration
+XMCP Configuration
 
 Defines tool groups, profiles, and permission management.
 """

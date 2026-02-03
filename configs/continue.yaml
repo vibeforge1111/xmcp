@@ -1,7 +1,7 @@
 # Continue.dev MCP Configuration
-# Copy to: .continue/mcpServers/x-twitter.yaml
+# Copy to: .continue/mcpServers/xmcp.yaml
 
-name: X-Twitter MCP
+name: XMCP
 description: |
   X/Twitter integration with 70+ tools, permission profiles, and Playwright article fetching.
   Use get_article for X URLs - WebFetch will fail.

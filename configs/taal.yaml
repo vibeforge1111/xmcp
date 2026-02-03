@@ -8,7 +8,7 @@ version: 1
 
 # MCP Servers to sync
 servers:
-  x-twitter:
+  xmcp:
     command: x-twitter-mcp-server
     description: X/Twitter integration with 70+ tools, permission profiles, Playwright articles
 
@@ -54,4 +54,4 @@ clients:
   continue:
     # Continue uses YAML format by default
     format: yaml
-    config_path: .continue/mcpServers/x-twitter.yaml
+    config_path: .continue/mcpServers/xmcp.yaml

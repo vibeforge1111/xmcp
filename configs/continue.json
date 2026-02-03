@@ -1,5 +1,5 @@
 {
-  "x-twitter": {
+  "xmcp": {
     "command": "x-twitter-mcp-server",
     "env": {
       "TWITTER_API_KEY": "${TWITTER_API_KEY}",

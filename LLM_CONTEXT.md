@@ -1,12 +1,12 @@
-# X-Twitter MCP - LLM Context Block
+# XMCP - LLM Context Block
 
-**Copy this into your system prompt or context when using X-Twitter MCP.**
+**Copy this into your system prompt or context when using XMCP.**
 
 ---
 
-## X-Twitter MCP Available
+## XMCP Available
 
-You have access to the X-Twitter MCP with the following capabilities:
+You have access to the XMCP with the following capabilities:
 
 ### CRITICAL: Article Fetching
 - Use `get_article` tool for ANY X/Twitter article URL

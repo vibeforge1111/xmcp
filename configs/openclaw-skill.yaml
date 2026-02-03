@@ -1,7 +1,7 @@
 # OpenClaw Skill Configuration
-# Copy to: ~/.openclaw/skills/x-twitter-mcp.yaml
+# Copy to: ~/.openclaw/skills/xmcp.yaml
 
-name: x-twitter-mcp
+name: xmcp
 description: |
   X/Twitter integration via MCP with 70+ tools.
   Search, post, engage, read articles, manage lists, and more.
@@ -10,7 +10,7 @@ description: |
 version: 1.0.0
 author: vibeforge1111
 license: MIT
-repository: https://github.com/vibeforge1111/vibeship-spark-intelligence
+repository: https://github.com/vibeforge1111/xmcp
 
 # MCP Server Configuration
 mcp:
@@ -81,7 +81,7 @@ triggers:
 
 # Instructions for the agent
 instructions: |
-  ## X-Twitter MCP Skill
+  ## XMCP Skill
 
   ### Critical Rule
   Use `get_article` for X/Twitter article URLs. WebFetch will fail because X articles require JavaScript rendering via Playwright.

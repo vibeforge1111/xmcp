@@ -1,4 +1,4 @@
-# X-Twitter MCP Compatibility Guide
+# XMCP Compatibility Guide
 
 This MCP server is compatible with **all major MCP clients**. This guide shows how to configure it for each platform.
 
@@ -31,7 +31,7 @@ This MCP server is compatible with **all major MCP clients**. This guide shows h
 ```json
 {
   "mcpServers": {
-    "x-twitter": {
+    "xmcp": {
       "type": "stdio",
       "command": "x-twitter-mcp-server",
       "env": {
@@ -57,10 +57,10 @@ Copy `CLAUDE.md` to your project root or include `LLM_CONTEXT.md` in your system
 
 Continue supports MCP natively. Create a config file in `.continue/mcpServers/`.
 
-### YAML Format (`.continue/mcpServers/x-twitter.yaml`)
+### YAML Format (`.continue/mcpServers/xmcp.yaml`)
 
 ```yaml
-name: X-Twitter MCP
+name: XMCP
 command: x-twitter-mcp-server
 env:
   TWITTER_API_KEY: ${TWITTER_API_KEY}
@@ -71,11 +71,11 @@ env:
   X_MCP_PROFILE: researcher
 ```
 
-### JSON Format (`.continue/mcpServers/x-twitter.json`)
+### JSON Format (`.continue/mcpServers/xmcp.json`)
 
 ```json
 {
-  "x-twitter": {
+  "xmcp": {
     "command": "x-twitter-mcp-server",
     "env": {
       "TWITTER_API_KEY": "${TWITTER_API_KEY}",
@@ -92,7 +92,7 @@ env:
 ### HTTP Transport (Remote/Cloud)
 
 ```yaml
-name: X-Twitter MCP
+name: XMCP
 type: streamable-http
 url: http://your-server:8081/mcp
 ```
@@ -103,10 +103,10 @@ url: http://your-server:8081/mcp
 
 OpenClaw uses skills to connect to MCP servers via the MCPorter system.
 
-### Skill Configuration (`~/.openclaw/skills/x-twitter-mcp.yaml`)
+### Skill Configuration (`~/.openclaw/skills/xmcp.yaml`)
 
 ```yaml
-name: x-twitter-mcp
+name: xmcp
 description: X/Twitter integration via MCP - search, post, engage, manage
 version: 1.0.0
 author: vibeforge1111
@@ -167,7 +167,7 @@ Zed has built-in MCP support via settings.
 {
   "mcp": {
     "servers": {
-      "x-twitter": {
+      "xmcp": {
         "command": "x-twitter-mcp-server",
         "env": {
           "TWITTER_API_KEY": "your_key",
@@ -198,7 +198,7 @@ OpenAI adopted MCP in March 2025. Configuration is similar to Claude Desktop.
 ```json
 {
   "servers": {
-    "x-twitter": {
+    "xmcp": {
       "command": "x-twitter-mcp-server",
       "env": {
         "TWITTER_API_KEY": "your_key",
@@ -224,7 +224,7 @@ Cody uses OpenCTX for MCP integration.
 ```json
 {
   "providers": {
-    "mcp-x-twitter": {
+    "mcp-xmcp": {
       "type": "mcp",
       "command": "x-twitter-mcp-server",
       "env": {
@@ -261,7 +261,7 @@ import { mcpClient } from 'genkitx-mcp';
 const ai = genkit({
   plugins: [
     mcpClient({
-      name: 'x-twitter',
+      name: 'xmcp',
       command: 'x-twitter-mcp-server',
       env: {
         TWITTER_API_KEY: process.env.TWITTER_API_KEY,
@@ -287,7 +287,7 @@ Taal synchronizes MCP configs across multiple AI assistants.
 ```yaml
 version: 1
 servers:
-  x-twitter:
+  xmcp:
     command: x-twitter-mcp-server
     env:
       TWITTER_API_KEY: ${TWITTER_API_KEY}
@@ -325,7 +325,7 @@ taal sync
 ```json
 {
   "openmcp.servers": {
-    "x-twitter": {
+    "xmcp": {
       "command": "x-twitter-mcp-server",
       "env": {
         "TWITTER_API_KEY": "${env:TWITTER_API_KEY}",
@@ -371,14 +371,14 @@ url: http://localhost:8081/mcp
 ### Cloud Deployment
 
 ```yaml
-# Docker
+# Docker (replace with your published image name)
 docker run -p 8081:8081 \
   -e TWITTER_API_KEY=xxx \
   -e TWITTER_API_SECRET=xxx \
   -e TWITTER_ACCESS_TOKEN=xxx \
   -e TWITTER_ACCESS_TOKEN_SECRET=xxx \
   -e TWITTER_BEARER_TOKEN=xxx \
-  vibeforge/x-twitter-mcp
+  vibeforge/xmcp
 
 # Then connect from any client
 url: https://your-server.com/mcp
@@ -406,7 +406,7 @@ For local LLMs via Ollama with MCP:
        model: llama3.2
 
    mcpServers:
-     - name: X-Twitter
+     - name: XMCP
        command: x-twitter-mcp-server
        env:
          TWITTER_BEARER_TOKEN: ${TWITTER_BEARER_TOKEN}

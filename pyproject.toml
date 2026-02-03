@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "x-twitter-mcp"
 version = "0.2.1"
-description = "Comprehensive X/Twitter MCP with permission-based profiles, 60+ tools, Playwright article fetching"
+description = "XMCP: comprehensive MCP for X/Twitter with permission profiles, 70+ tools, Playwright article fetching"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
@@ -60,10 +60,10 @@ x-twitter-mcp-server = "x_twitter_mcp:main"
 x-twitter-mcp-http = "x_twitter_mcp.http_server:main"
 
 [project.urls]
-Homepage = "https://github.com/vibeforge1111/vibeship-spark-intelligence"
-Repository = "https://github.com/vibeforge1111/vibeship-spark-intelligence"
-Documentation = "https://github.com/vibeforge1111/vibeship-spark-intelligence/tree/main/mcp-servers/x-twitter-mcp"
-Issues = "https://github.com/vibeforge1111/vibeship-spark-intelligence/issues"
+Homepage = "https://github.com/vibeforge1111/xmcp"
+Repository = "https://github.com/vibeforge1111/xmcp"
+Documentation = "https://github.com/vibeforge1111/xmcp"
+Issues = "https://github.com/vibeforge1111/xmcp/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/x_twitter_mcp"]

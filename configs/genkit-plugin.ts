@@ -9,11 +9,11 @@
 import { genkit } from 'genkit';
 import { mcpClient } from 'genkitx-mcp';
 
-// Initialize Genkit with X-Twitter MCP
+// Initialize Genkit with XMCP
 const ai = genkit({
   plugins: [
     mcpClient({
-      name: 'x-twitter',
+      name: 'xmcp',
       serverProcess: {
         command: 'x-twitter-mcp-server',
         env: {
@@ -29,7 +29,7 @@ const ai = genkit({
   ],
 });
 
-// Example: Use X-Twitter tools in a flow
+// Example: Use XMCP tools in a flow
 export const searchTwitterFlow = ai.defineFlow(
   {
     name: 'searchTwitter',

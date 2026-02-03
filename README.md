@@ -1,4 +1,4 @@
-# X-Twitter MCP
+# XMCP
 
 The most comprehensive MCP server for X/Twitter with **permission-based access control**, **70+ tools**, and **Playwright-powered article fetching**.
 
@@ -24,6 +24,8 @@ pip install "x-twitter-mcp[articles] @ git+https://github.com/vibeforge1111/xmcp
 playwright install chromium
 ```
 
+Note: The package name is `x-twitter-mcp` and the server command is `x-twitter-mcp-server`.
+
 ### 2. Get API Keys
 
 Get your credentials from [developer.twitter.com](https://developer.twitter.com):
@@ -38,7 +40,7 @@ Add to your Claude settings (`~/.claude.json`):
 ```json
 {
   "mcpServers": {
-    "x-twitter": {
+    "xmcp": {
       "type": "stdio",
       "command": "x-twitter-mcp-server",
       "env": {
@@ -53,6 +55,8 @@ Add to your Claude settings (`~/.claude.json`):
   }
 }
 ```
+
+If you name the server `xmcp`, tools will appear as `mcp__xmcp__*` in clients that show tool prefixes.
 
 ### 4. Use
 

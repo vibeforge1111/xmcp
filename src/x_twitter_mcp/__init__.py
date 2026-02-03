@@ -1,5 +1,5 @@
 """
-X-Twitter MCP - Comprehensive Twitter/X API access with permission-based profiles.
+XMCP - Comprehensive Twitter/X API access with permission-based profiles.
 
 Configuration via environment variables:
 - X_MCP_PROFILE: researcher|creator|manager|automation|custom (default: researcher)

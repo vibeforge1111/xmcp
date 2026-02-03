@@ -1,6 +1,6 @@
-# X-Twitter MCP - AI Agent Instructions
+# XMCP - AI Agent Instructions
 
-This file provides instructions for AI agents (Claude, GPT, etc.) using the X-Twitter MCP.
+This file provides instructions for AI agents (Claude, GPT, etc.) using the XMCP.
 
 ## CRITICAL: Article Fetching Requires Playwright
 
