@@ -14,14 +14,19 @@ Note: The package name is `xmcp` and the server command is `xmcp-server`.
 
 ## 2. Get Twitter API Keys (Required)
 
-1. Go to [developer.twitter.com](https://developer.twitter.com)
-2. Create a project and app
-3. Get your keys:
-   - API Key
-   - API Secret
-   - Access Token
-   - Access Token Secret
+XMCP requires X/Twitter API credentials to run. Quick guide:
+
+1. Go to https://developer.twitter.com and sign in.
+2. Create a Project and App.
+3. In the App Keys and Tokens tab, generate:
+   - API Key and API Secret
+   - Access Token and Access Token Secret
    - Bearer Token
+4. Copy `.env.example` to `.env` and paste your keys.
+
+Common error messages and fixes:
+- "Missing required environment variable" -> add the missing key to `.env` or your MCP config.
+- "403 Forbidden" / "Error 453" -> your X API access tier does not include that endpoint.
 
 XMCP will not work without valid API credentials.
 Copy the example environment file and fill it in:
