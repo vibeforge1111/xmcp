@@ -413,6 +413,10 @@ playwright install chromium
 Built on the upstream project by Rafal Janicki:
 `https://github.com/rafaljanicki/x-twitter-mcp-server`
 
+## Update Log
+
+See `CHANGELOG.md` for a summary of enhancements made in XMCP.
+
 Enhanced by [VibeShip](https://github.com/vibeforge1111) with:
 - Permission-based access control (5 profiles, 8 groups)
 - 70+ tools (vs ~20 original)
